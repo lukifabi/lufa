@@ -4,13 +4,14 @@
  */
 package Model;
 
+import java.awt.Point;
 import java.util.ArrayList;
 
 /**
  *
  * @author Fabian
  */
-public class Figure {
+public abstract class Figure {
     
     private String name;
     private String description;
@@ -21,9 +22,17 @@ public class Figure {
     private int stamina;
     private int experience;
     private int money;
+    protected Point currentPosition;
+    protected double xDir;
+    protected double yDir;
+    protected double k;
     
     private ArrayList<Item> items;
     private ArrayList<Ability> abilities;    
+    
+    public abstract void draw();
+    public abstract void go();
+    public abstract void stop();
     
     public String getName() {
         return name;
