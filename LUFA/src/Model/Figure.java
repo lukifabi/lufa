@@ -19,7 +19,10 @@ public class Figure {
     private int agility;
     private int precision;
     private int stamina;
+    private int experience;
+    private int money;
     
+    private ArrayList<Item> items;
     private ArrayList<Ability> abilities;    
     
     public String getName() {
@@ -84,6 +87,30 @@ public class Figure {
 
     public void setAbilities(ArrayList<Ability> abilities) {
         this.abilities = abilities;
+    }
+
+    public int getExperience() {
+        return experience;
+    }
+
+    public int getMoney() {
+        return money;
+    }
+
+    public ArrayList<Item> getItems() {
+        return items;
+    }
+
+    public void setExperience(int experience) {
+        this.experience = experience;
+    }
+
+    public void setMoney(int money) {
+        this.money = money;
+    }
+
+    public void setItems(ArrayList<Item> items) {
+        this.items = items;
     }
     
     
