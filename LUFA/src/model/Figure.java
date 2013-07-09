@@ -12,7 +12,7 @@ import java.util.ArrayList;
  *
  * @author Fabian
  */
-public abstract class Figure {
+public abstract class Figure implements Runnable {
     
     private String name;
     private String description;

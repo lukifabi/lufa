@@ -10,6 +10,7 @@ package model;
  */
 public class Warrior extends Figure{
 
+    
     private Thread thread;
     
     @Override
@@ -26,5 +27,10 @@ public class Warrior extends Figure{
     public void stop() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-
+    
+    @Override
+    public void run()
+    {
+        
+    }
 }
