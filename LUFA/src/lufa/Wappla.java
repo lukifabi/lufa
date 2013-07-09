@@ -12,6 +12,6 @@ public class Wappla
 {
     public static void main(String[] args)
     {
-        System.out.println("U ARE A WAPPLA!");
+        System.out.println("DU KONNST GOR NIX DU SCHIACHER POTZL! :P");
     }
 }
