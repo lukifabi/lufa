@@ -8,6 +8,6 @@ package Model;
  *
  * @author Fabian
  */
-public class Assassin extends Character{
+public class Assassin extends Figure{
     
 }

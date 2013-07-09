@@ -8,6 +8,6 @@ package Model;
  *
  * @author Fabian
  */
-public class Hunter extends Character{
+public class Hunter extends Figure{
     
 }

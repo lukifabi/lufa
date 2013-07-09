@@ -8,6 +8,6 @@ package Model;
  *
  * @author Fabian
  */
-public class Mage extends Character{
+public class Mage extends Figure{
     
 }

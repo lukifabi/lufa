@@ -10,7 +10,7 @@ import java.util.ArrayList;
  *
  * @author Fabian
  */
-public class Character {
+public class Figure {
     
     private String name;
     private String description;
