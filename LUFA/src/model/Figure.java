@@ -35,6 +35,47 @@ public abstract class Figure {
     public abstract void draw();
     public abstract void go();
     public abstract void stop();
+
+    public Graphics2D getG2d() {
+        return g2d;
+    }
+
+    public void setCurrentPosition(Point currentPosition) {
+        this.currentPosition = currentPosition;
+    }
+
+    public void setxDir(double xDir) {
+        this.xDir = xDir;
+    }
+
+    public void setyDir(double yDir) {
+        this.yDir = yDir;
+    }
+
+    public void setK(double k) {
+        this.k = k;
+    }
+
+    public void setG2d(Graphics2D g2d) {
+        this.g2d = g2d;
+    }
+
+    public Point getCurrentPosition() {
+        return currentPosition;
+    }
+
+    public double getxDir() {
+        return xDir;
+    }
+
+    public double getyDir() {
+        return yDir;
+    }
+
+    public double getK() {
+        return k;
+    }
+    
     
     public String getName() {
         return name;

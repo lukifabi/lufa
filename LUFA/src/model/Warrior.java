@@ -10,6 +10,8 @@ package model;
  */
 public class Warrior extends Figure{
 
+    private Thread thread;
+    
     @Override
     public void draw() {
         
