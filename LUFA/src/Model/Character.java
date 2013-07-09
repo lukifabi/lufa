@@ -20,8 +20,8 @@ public class Character {
     private int precision;
     private int stamina;
     
-    private ArrayList<Ability> abilities;
-
+    private ArrayList<Ability> abilities;    
+    
     public String getName() {
         return name;
     }
