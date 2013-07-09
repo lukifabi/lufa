@@ -13,5 +13,6 @@ public class Wappla
     public static void main(String[] args)
     {
         System.out.println("DU KONNST GOR NIX DU SCHIACHER POTZL! :P");
+        System.out.println("Hannes Kannes");
     }
 }
