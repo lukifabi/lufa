@@ -5,6 +5,7 @@
 package controller;
 
 import java.awt.Graphics2D;
+import java.awt.Point;
 import model.Warrior;
 import java.util.ArrayList;
 import model.Figure;
@@ -23,15 +24,16 @@ public class Controller {
     
     public void addFigures()
     {
-     //   Warrior w = new Warrior();
-        Figure w = new Warrior();
-        w.setName("Hans Peter");
+        Warrior w = null;
+        w = new Warrior();
+        w.setName("HansPeter");
         w.setDescription("This is a warrior");
         w.setAgility(3);
         w.setMoney(300);
         w.setPrecision(4);
         w.setStamina(44);
         w.setExperience(45);
+        w.setCurrentPosition(new Point(100, 100));
         figures.add(w);
     }
     
@@ -39,11 +41,13 @@ public class Controller {
     {
         for(int i = 0; i < figures.size();i++)
         {
+            System.out.println("Running");
             if(figures.get(i).getName().equals(warriorName))
             {
                 Figure figure = figures.get(i);
                 figure.setG2d(g2d);
                 figure.go();
+                System.out.println(figure.getCurrentPosition());
             }
         }
     }

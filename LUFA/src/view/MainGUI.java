@@ -5,7 +5,9 @@
 package view;
 
 import controller.Controller;
+import java.awt.Graphics2D;
 import java.util.ArrayList;
+import javax.swing.plaf.basic.BasicInternalFrameTitlePane;
 import model.Figure;
 
 /**
@@ -16,7 +18,7 @@ public class MainGUI extends javax.swing.JFrame {
 
     ArrayList<Figure> figures;
     Controller co;
-    MovementFrame mf;
+    TestFrame tf;
     /**
      * Creates new form MainGUI
      */
@@ -24,8 +26,13 @@ public class MainGUI extends javax.swing.JFrame {
         initComponents();
         setTitle("Menue");
         super.pack();
-        mf = new MovementFrame();
-        mf.setVisible(true);
+        setLocation(100,100);
+        co = new Controller();
+        co.addFigures();
+        figures = co.getFigures();
+        tf = new TestFrame();
+        tf.setVisible(true);
+      
     }
 
     
@@ -38,21 +45,41 @@ public class MainGUI extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jButton1 = new javax.swing.JButton();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jButton1.setText("Pres");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                onPress(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(319, Short.MAX_VALUE)
+                .addComponent(jButton1)
+                .addGap(28, 28, 28))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(27, 27, 27)
+                .addComponent(jButton1)
+                .addContainerGap(250, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void onPress(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_onPress
+       Graphics2D g2d = (Graphics2D)tf.getMovementPanel1().getGraphics();
+        co.start("HansPeter", g2d);
+    }//GEN-LAST:event_onPress
 
     /**
      * @param args the command line arguments
@@ -89,5 +116,6 @@ public class MainGUI extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
     // End of variables declaration//GEN-END:variables
 }

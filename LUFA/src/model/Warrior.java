@@ -20,8 +20,11 @@ public class Warrior extends Figure{
     @Override
     public void draw() {
         g2d.setColor(Color.red);
-        g2d.fillOval(400, 100, 40, 30);
-        g2d.fillOval(400+1, 100+1, 40, 30);
+        currentPosition.setLocation(currentPosition.x+2, currentPosition.y+2);
+        g2d.fillOval(currentPosition.x, currentPosition.y, 40, 30);
+        System.out.println(currentPosition);
+        g2d.setBackground(Color.yellow);
+
     }
 
     @Override
@@ -44,7 +47,7 @@ public class Warrior extends Figure{
             draw();
             try
             {
-                Thread.sleep(1300);
+                thread.sleep(1300);
             }catch(InterruptedException ie)
             {
                 Logger.getLogger(Warrior.class.getName()).log(Level.SEVERE, null, ie);
