@@ -37,6 +37,7 @@ public class MovementFrame extends javax.swing.JFrame {
         super.paintComponents(g);
         g2d = (Graphics2D)g;
         g2d.setBackground(Color.yellow);
+        co.start("Hans Peter", g2d);
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -76,7 +77,7 @@ public class MovementFrame extends javax.swing.JFrame {
     private void onKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_onKeyPressed
       if(evt.getKeyCode() == KeyEvent.VK_B)
       {
-          co.start("Hans Peter", g2d);
+          
       }
     }//GEN-LAST:event_onKeyPressed
 

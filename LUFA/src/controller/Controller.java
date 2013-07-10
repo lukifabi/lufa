@@ -8,6 +8,7 @@ import java.awt.Graphics2D;
 import model.Warrior;
 import java.util.ArrayList;
 import model.Figure;
+import model.Hunter;
 /**
  *
  * @author Fabian
@@ -22,9 +23,15 @@ public class Controller {
     
     public void addFigures()
     {
-        Warrior w = new Warrior();
+     //   Warrior w = new Warrior();
+        Figure w = new Warrior();
         w.setName("Hans Peter");
         w.setDescription("This is a warrior");
+        w.setAgility(3);
+        w.setMoney(300);
+        w.setPrecision(4);
+        w.setStamina(44);
+        w.setExperience(45);
         figures.add(w);
     }
     
