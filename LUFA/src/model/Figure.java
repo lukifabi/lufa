@@ -24,6 +24,7 @@ public abstract class Figure implements Runnable {
     private int experience;
     private int money;
     protected Point currentPosition;
+    protected Point targetPosition;
     protected double xDir;
     protected double yDir;
     protected double k;

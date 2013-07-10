@@ -79,6 +79,7 @@ public class MainGUI extends javax.swing.JFrame {
      {
          Graphics2D g2d = (Graphics2D)movementPanel1.getGraphics();
          co.start("HansPeter", g2d, Direction.right);
+         System.out.println("RIGHT");
      }else if(evt.getKeyCode() == KeyEvent.VK_LEFT)
      {
          Graphics2D g2d = (Graphics2D)movementPanel1.getGraphics();
