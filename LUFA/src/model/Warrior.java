@@ -4,13 +4,16 @@
  */
 package model;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author Fabian
  */
 public class Warrior extends Figure{
 
-    
+    private boolean run;
     private Thread thread;
     
     @Override
@@ -20,17 +23,29 @@ public class Warrior extends Figure{
 
     @Override
     public void go() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        thread = new Thread();
+        thread.start();
+        run = true;
     }
 
     @Override
     public void stop() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+       run = false;
     }
     
     @Override
     public void run()
     {
-        
+        while(run)
+        {
+            draw();
+            try
+            {
+                Thread.sleep(1300);
+            }catch(InterruptedException ie)
+            {
+                Logger.getLogger(Warrior.class.getName()).log(Level.SEVERE, null, ie);
+            }
+        }
     }
 }
