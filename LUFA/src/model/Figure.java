@@ -33,7 +33,7 @@ public abstract class Figure implements Runnable {
     private ArrayList<Ability> abilities;    
     
     public abstract void draw();
-    public abstract void go();
+    public abstract void go(String dir);
     public abstract void stop();
 
     public Graphics2D getG2d() {

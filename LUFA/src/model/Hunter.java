@@ -16,7 +16,7 @@ public class Hunter extends Figure{
     }
 
     @Override
-    public void go() {
+    public void go(String dir) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 

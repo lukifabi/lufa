@@ -13,4 +13,5 @@ public class Direction {
     public static final String left = "LEFT";
     public static final String right = "RIGHT";
     public static final String up = "UP"; 
+    public static final String down = "DOWN";
 }

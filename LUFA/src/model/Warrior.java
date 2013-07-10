@@ -16,24 +16,39 @@ public class Warrior extends Figure{
 
     private boolean run = true;
     private Thread thread;
+    private String direction;
     
     @Override
     public void draw() {
-        
         g2d.setColor(Color.red);
-        currentPosition.setLocation(currentPosition.x+2, currentPosition.y+2);
-        g2d.fillOval(currentPosition.x, currentPosition.y, 10, 30);
-        System.out.println(currentPosition);
-        g2d.setBackground(Color.yellow);
-
+        switch(direction)
+        {
+            case "RIGHT":
+                    currentPosition.setLocation(currentPosition.x+3,currentPosition.y);
+                    g2d.fillOval(currentPosition.x, currentPosition.y, 10, 15);
+                break;
+            case "LEFT":
+                    currentPosition.setLocation(currentPosition.x-3,currentPosition.y);
+                    g2d.fillOval(currentPosition.x, currentPosition.y, 10, 15);
+                break;
+            case "UP":
+                    currentPosition.setLocation(currentPosition.x,currentPosition.y-3);
+                    g2d.fillOval(currentPosition.x, currentPosition.y, 10, 15);
+                break;
+            case "DOWN":
+                    currentPosition.setLocation(currentPosition.x,currentPosition.y+3);
+                    g2d.fillOval(currentPosition.x, currentPosition.y, 10, 15);
+                break;
+        }
     }
 
     @Override
-    public void go() {
+    public void go(String dir) {
         System.out.println("go");
         thread = new Thread(this);
         thread.start();
         run = true;
+        direction = dir;
     }
 
     @Override

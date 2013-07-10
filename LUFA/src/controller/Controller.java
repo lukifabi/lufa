@@ -44,7 +44,7 @@ public class Controller {
             if(f.getName().equals(warriorName))
             {
                 f.setG2d(g2d);
-                f.go();
+                f.go(direction);
             }
         }
     }

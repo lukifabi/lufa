@@ -87,11 +87,16 @@ public class MainGUI extends javax.swing.JFrame {
      {
           Graphics2D g2d = (Graphics2D)movementPanel1.getGraphics();
          co.start("HansPeter", g2d, Direction.up);
+     }else if(evt.getKeyCode() == KeyEvent.VK_DOWN)
+     {
+          Graphics2D g2d = (Graphics2D)movementPanel1.getGraphics();
+         co.start("HansPeter", g2d, Direction.down);
      }
     }//GEN-LAST:event_onKeyPressed
 
     private void onKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_onKeyReleased
-     if(evt.getKeyCode() == KeyEvent.VK_RIGHT)
+     if(evt.getKeyCode() == KeyEvent.VK_RIGHT || evt.getKeyCode() == KeyEvent.VK_LEFT ||
+        evt.getKeyCode() == KeyEvent.VK_UP || evt.getKeyCode() == KeyEvent.VK_DOWN)
      {
          co.stop("HansPeter");
      }
