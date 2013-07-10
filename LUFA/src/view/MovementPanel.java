@@ -11,13 +11,13 @@ import model.Figure;
  *
  * @author Fabian
  */
-public class GamePanel extends javax.swing.JPanel {
+public class MovementPanel extends javax.swing.JPanel {
 
     ArrayList<Figure> figures;
     /**
-     * Creates new form GamePanel
+     * Creates new form MovementPanel
      */
-    public GamePanel() {
+    public MovementPanel() {
         initComponents();
     }
 
