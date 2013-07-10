@@ -14,7 +14,7 @@ import java.util.logging.Logger;
  */
 public class Warrior extends Figure{
 
-    private boolean run;
+    private boolean run = true;
     private Thread thread;
     
     @Override
@@ -29,7 +29,8 @@ public class Warrior extends Figure{
 
     @Override
     public void go() {
-        thread = new Thread();
+        System.out.println("go");
+        thread = new Thread(this);
         thread.start();
         run = true;
     }
@@ -42,6 +43,7 @@ public class Warrior extends Figure{
     @Override
     public void run()
     {
+        System.out.println("okay");
         while(run)
         {
             draw();

@@ -23,11 +23,11 @@ public abstract class Figure implements Runnable {
     private int stamina;
     private int experience;
     private int money;
-    Point currentPosition;
-    double xDir;
-    double yDir;
-    double k;
-    Graphics2D g2d;
+    protected Point currentPosition;
+    protected double xDir;
+    protected double yDir;
+    protected double k;
+    protected Graphics2D g2d;
     
     private ArrayList<Item> items;
     private ArrayList<Ability> abilities;    

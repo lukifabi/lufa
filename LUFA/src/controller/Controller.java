@@ -47,7 +47,6 @@ public class Controller {
                 Figure figure = figures.get(i);
                 figure.setG2d(g2d);
                 figure.go();
-                System.out.println(figure.getCurrentPosition());
             }
         }
     }
