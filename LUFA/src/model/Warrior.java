@@ -19,9 +19,10 @@ public class Warrior extends Figure{
     
     @Override
     public void draw() {
+        
         g2d.setColor(Color.red);
         currentPosition.setLocation(currentPosition.x+2, currentPosition.y+2);
-        g2d.fillOval(currentPosition.x, currentPosition.y, 40, 30);
+        g2d.fillOval(currentPosition.x, currentPosition.y, 10, 30);
         System.out.println(currentPosition);
         g2d.setBackground(Color.yellow);
 

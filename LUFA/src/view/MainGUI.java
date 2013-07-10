@@ -5,12 +5,13 @@
 package view;
 
 import controller.Controller;
+import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 import javax.swing.plaf.basic.BasicInternalFrameTitlePane;
 import model.Figure;
-
+import model.Direction;
 /**
  *
  * @author Fabian
@@ -19,7 +20,7 @@ public class MainGUI extends javax.swing.JFrame {
 
     ArrayList<Figure> figures;
     Controller co;
-    TestFrame tf;
+
     /**
      * Creates new form MainGUI
      */
@@ -31,11 +32,10 @@ public class MainGUI extends javax.swing.JFrame {
         co = new Controller();
         co.addFigures();
         figures = co.getFigures();
-        tf = new TestFrame();
-        tf.setVisible(true);
-      
+        movementPanel1.setBackground(Color.BLACK);
     }
-
+    
+    
     
     /**
      * This method is called from within the constructor to initialize the form.
@@ -45,6 +45,8 @@ public class MainGUI extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
+
+        movementPanel1 = new view.MovementPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addKeyListener(new java.awt.event.KeyAdapter() {
@@ -56,16 +58,18 @@ public class MainGUI extends javax.swing.JFrame {
             }
         });
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout movementPanel1Layout = new javax.swing.GroupLayout(movementPanel1);
+        movementPanel1.setLayout(movementPanel1Layout);
+        movementPanel1Layout.setHorizontalGroup(
+            movementPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 400, Short.MAX_VALUE)
         );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        movementPanel1Layout.setVerticalGroup(
+            movementPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 300, Short.MAX_VALUE)
         );
+
+        getContentPane().add(movementPanel1, java.awt.BorderLayout.CENTER);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -73,15 +77,22 @@ public class MainGUI extends javax.swing.JFrame {
     private void onKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_onKeyPressed
      if(evt.getKeyCode() == KeyEvent.VK_RIGHT)
      {
-         Graphics2D g2d = (Graphics2D)tf.getMovementPanel1().getGraphics();
-         co.start("HansPeter", g2d);
+         Graphics2D g2d = (Graphics2D)movementPanel1.getGraphics();
+         co.start("HansPeter", g2d, Direction.right);
+     }else if(evt.getKeyCode() == KeyEvent.VK_LEFT)
+     {
+         Graphics2D g2d = (Graphics2D)movementPanel1.getGraphics();
+         co.start("HansPeter", g2d, Direction.left);
+     }else if(evt.getKeyCode() == KeyEvent.VK_UP)
+     {
+          Graphics2D g2d = (Graphics2D)movementPanel1.getGraphics();
+         co.start("HansPeter", g2d, Direction.up);
      }
     }//GEN-LAST:event_onKeyPressed
 
     private void onKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_onKeyReleased
      if(evt.getKeyCode() == KeyEvent.VK_RIGHT)
      {
-         Graphics2D g2d = (Graphics2D)tf.getMovementPanel1().getGraphics();
          co.stop("HansPeter");
      }
     }//GEN-LAST:event_onKeyReleased
@@ -121,5 +132,6 @@ public class MainGUI extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private view.MovementPanel movementPanel1;
     // End of variables declaration//GEN-END:variables
 }

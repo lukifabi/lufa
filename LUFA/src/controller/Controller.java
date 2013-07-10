@@ -37,16 +37,14 @@ public class Controller {
         figures.add(w);
     }
     
-    public void start(String warriorName, Graphics2D g2d)
+    public void start(String warriorName, Graphics2D g2d, String direction)
     {
-        for(int i = 0; i < figures.size();i++)
+        for(Figure f : figures)
         {
-            System.out.println("Running");
-            if(figures.get(i).getName().equals(warriorName))
+            if(f.getName().equals(warriorName))
             {
-                Figure figure = figures.get(i);
-                figure.setG2d(g2d);
-                figure.go();
+                f.setG2d(g2d);
+                f.go();
             }
         }
     }
