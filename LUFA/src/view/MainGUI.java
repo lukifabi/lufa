@@ -18,7 +18,8 @@ import model.Direction;
  */
 public class MainGUI extends javax.swing.JFrame {
 
-    ArrayList<Figure> figures;
+    private ArrayList<Figure> figures;
+    private boolean threadFlag = false;
     Controller co;
 
     /**
@@ -75,13 +76,12 @@ public class MainGUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void onKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_onKeyPressed
-     if(Thread.currentThread().isAlive() == false)
-     {
+if(threadFlag == false)
+{
      if(evt.getKeyCode() == KeyEvent.VK_RIGHT)
      {
          Graphics2D g2d = (Graphics2D)movementPanel1.getGraphics();
          co.start("HansPeter", g2d, Direction.right);
-         System.out.println("RIGHT");
      }else if(evt.getKeyCode() == KeyEvent.VK_LEFT)
      {
          Graphics2D g2d = (Graphics2D)movementPanel1.getGraphics();
@@ -93,22 +93,25 @@ public class MainGUI extends javax.swing.JFrame {
      }else if(evt.getKeyCode() == KeyEvent.VK_DOWN)
      {
           Graphics2D g2d = (Graphics2D)movementPanel1.getGraphics();
-         co.start("HansPeter", g2d, Direction.down);
-     
+         co.start("HansPeter", g2d, Direction.down);    
      }
-    }
+}
+     threadFlag = true;
      repaint();
+     co.update("HansPeter");
     }//GEN-LAST:event_onKeyPressed
 
     private void onKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_onKeyReleased
-     if(Thread.currentThread().isAlive() == true)
-     {
+    if(threadFlag) 
+    {
         if(evt.getKeyCode() == KeyEvent.VK_RIGHT || evt.getKeyCode() == KeyEvent.VK_LEFT ||
         evt.getKeyCode() == KeyEvent.VK_UP || evt.getKeyCode() == KeyEvent.VK_DOWN)
      {
+         System.out.println("stop");
          co.stop("HansPeter");
      }
-     }
+    threadFlag = false;
+    }
     }//GEN-LAST:event_onKeyReleased
 
     /**

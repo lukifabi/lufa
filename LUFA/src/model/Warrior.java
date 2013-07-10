@@ -60,7 +60,7 @@ public class Warrior extends Figure{
     //Stops a thread - Dead
     @Override
     public void stop() {
-//        System.out.println("Thread destroyed "+thread.getName());
+        System.out.println("Thread destroyed "+thread.getName());
        run = false;
     }
     
@@ -79,5 +79,11 @@ public class Warrior extends Figure{
                 Logger.getLogger(Warrior.class.getName()).log(Level.SEVERE, null, ie);
             }
         }
+    }
+
+    @Override
+    public void update() {
+        g2d.setColor(Color.red);
+        g2d.fillOval(currentPosition.x, currentPosition.y, 10, 15);
     }
 }

@@ -36,7 +36,7 @@ public abstract class Figure implements Runnable {
     public abstract void draw();
     public abstract void go(String dir);
     public abstract void stop();
-
+    public abstract void update();
     public Graphics2D getG2d() {
         return g2d;
     }
