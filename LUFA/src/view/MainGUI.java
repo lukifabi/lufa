@@ -75,6 +75,8 @@ public class MainGUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void onKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_onKeyPressed
+     if(Thread.currentThread().isAlive() == false)
+     {
      if(evt.getKeyCode() == KeyEvent.VK_RIGHT)
      {
          Graphics2D g2d = (Graphics2D)movementPanel1.getGraphics();
@@ -94,14 +96,18 @@ public class MainGUI extends javax.swing.JFrame {
          co.start("HansPeter", g2d, Direction.down);
      
      }
+    }
      repaint();
     }//GEN-LAST:event_onKeyPressed
 
     private void onKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_onKeyReleased
-     if(evt.getKeyCode() == KeyEvent.VK_RIGHT || evt.getKeyCode() == KeyEvent.VK_LEFT ||
+     if(Thread.currentThread().isAlive() == true)
+     {
+        if(evt.getKeyCode() == KeyEvent.VK_RIGHT || evt.getKeyCode() == KeyEvent.VK_LEFT ||
         evt.getKeyCode() == KeyEvent.VK_UP || evt.getKeyCode() == KeyEvent.VK_DOWN)
      {
          co.stop("HansPeter");
+     }
      }
     }//GEN-LAST:event_onKeyReleased
 

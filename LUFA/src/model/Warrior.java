@@ -60,7 +60,7 @@ public class Warrior extends Figure{
     //Stops a thread - Dead
     @Override
     public void stop() {
-        System.out.println("Thread destroyed "+thread.getName());
+//        System.out.println("Thread destroyed "+thread.getName());
        run = false;
     }
     
