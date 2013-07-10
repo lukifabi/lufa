@@ -4,6 +4,7 @@
  */
 package view;
 
+import controller.Controller;
 import java.util.ArrayList;
 import model.Figure;
 
@@ -14,11 +15,15 @@ import model.Figure;
 public class MovementPanel extends javax.swing.JPanel {
 
     ArrayList<Figure> figures;
+    Controller co = new Controller();
     /**
      * Creates new form MovementPanel
      */
     public MovementPanel() {
         initComponents();
+        co.addFigures();
+        figures = co.getFigures();
+        
     }
 
     /**
