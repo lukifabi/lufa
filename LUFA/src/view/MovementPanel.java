@@ -14,7 +14,6 @@ import java.awt.Graphics2D;
  */
 public class MovementPanel extends javax.swing.JPanel {
 
-    Graphics2D g2d;
     /**
      * Creates new form MovementPanel
      */
@@ -22,12 +21,6 @@ public class MovementPanel extends javax.swing.JPanel {
         initComponents();
     }
     
-     protected void paintComponent(Graphics g)
-    {
-        super.paintComponent(g);
-        g2d = (Graphics2D)g;
-        g2d.setBackground(Color.yellow);
-    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always

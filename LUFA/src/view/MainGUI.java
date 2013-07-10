@@ -91,7 +91,9 @@ public class MainGUI extends javax.swing.JFrame {
      {
           Graphics2D g2d = (Graphics2D)movementPanel1.getGraphics();
          co.start("HansPeter", g2d, Direction.down);
+     
      }
+     repaint();
     }//GEN-LAST:event_onKeyPressed
 
     private void onKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_onKeyReleased

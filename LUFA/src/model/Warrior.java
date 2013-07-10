@@ -18,6 +18,9 @@ public class Warrior extends Figure{
     private Thread thread;
     private String direction;
     
+    /*
+     * This method enables the Warrior to move
+     */
     @Override
     public void draw() {
         g2d.setColor(Color.red);
@@ -42,24 +45,28 @@ public class Warrior extends Figure{
         }
     }
 
+    //Start a new Thread - Runnable Mode
     @Override
     public void go(String dir) {
-        System.out.println("go");
+
         thread = new Thread(this);
+                System.out.println("Thread created "+thread.getName());
         thread.start();
         run = true;
         direction = dir;
     }
 
+    //Stops a thread - Dead
     @Override
     public void stop() {
+        System.out.println("Thread destroyed "+thread.getName());
        run = false;
     }
     
+    //Executes the thread - Running mode
     @Override
     public void run()
     {
-        System.out.println("okay");
         while(run)
         {
             draw();
