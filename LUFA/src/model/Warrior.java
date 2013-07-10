@@ -18,7 +18,8 @@ public class Warrior extends Figure{
     private boolean run = true;
     private Thread thread;
     private String direction;
-    private int count = 0;
+
+    
     /*
      * This method enables the Warrior to move
      */
@@ -28,19 +29,19 @@ public class Warrior extends Figure{
         switch(direction)
         {
             case "RIGHT":
-                    currentPosition.setLocation(currentPosition.x+1,currentPosition.y);
+                    currentPosition.setLocation(currentPosition.x+3,currentPosition.y);
                     g2d.fillOval(currentPosition.x, currentPosition.y, 10, 15);
                 break;
             case "LEFT":
-                    currentPosition.setLocation(currentPosition.x-1,currentPosition.y);
+                    currentPosition.setLocation(currentPosition.x-3,currentPosition.y);
                     g2d.fillOval(currentPosition.x, currentPosition.y, 10, 15);
                 break;
             case "UP":
-                    currentPosition.setLocation(currentPosition.x,currentPosition.y-1);
+                    currentPosition.setLocation(currentPosition.x,currentPosition.y-3);
                     g2d.fillOval(currentPosition.x, currentPosition.y, 10, 15);
                 break;
             case "DOWN":
-                    currentPosition.setLocation(currentPosition.x,currentPosition.y+1);
+                    currentPosition.setLocation(currentPosition.x,currentPosition.y+3);
                     g2d.fillOval(currentPosition.x, currentPosition.y, 10, 15);
                 break;
         }
