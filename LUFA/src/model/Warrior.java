@@ -4,6 +4,7 @@
  */
 package model;
 
+import java.awt.Color;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -18,7 +19,9 @@ public class Warrior extends Figure{
     
     @Override
     public void draw() {
-        
+        g2d.setColor(Color.red);
+        g2d.fillOval(400, 100, 40, 30);
+        g2d.fillOval(400+1, 100+1, 40, 30);
     }
 
     @Override

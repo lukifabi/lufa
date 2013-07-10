@@ -5,6 +5,8 @@
 package view;
 
 import controller.Controller;
+import java.awt.Graphics2D;
+import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 import model.Figure;
 
@@ -21,7 +23,9 @@ public class MovementFrame extends javax.swing.JFrame {
      */
     public MovementFrame() {
         initComponents();
-        
+        co = new Controller();
+        co.addFigures();
+        figures = co.getFigures();
     }
 
     /**
@@ -36,6 +40,12 @@ public class MovementFrame extends javax.swing.JFrame {
         jMovementPanel = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jMovementPanel.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                onKeyPressed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jMovementPanelLayout = new javax.swing.GroupLayout(jMovementPanel);
         jMovementPanel.setLayout(jMovementPanelLayout);
@@ -52,6 +62,14 @@ public class MovementFrame extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void onKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_onKeyPressed
+    if(evt.getKeyCode() == KeyEvent.VK_KP_RIGHT)
+    {
+        Graphics2D g2d = (Graphics2D)jMovementPanel.getGraphics();
+        co.start("Hans Peter", g2d);
+    }
+    }//GEN-LAST:event_onKeyPressed
 
     /**
      * @param args the command line arguments

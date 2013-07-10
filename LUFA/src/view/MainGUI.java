@@ -24,9 +24,6 @@ public class MainGUI extends javax.swing.JFrame {
         initComponents();
         setTitle("Menue");
         super.pack();
-        co = new Controller();
-        co.addFigures();
-        figures = co.getFigures();
         mf = new MovementFrame();
         mf.setVisible(true);
     }
