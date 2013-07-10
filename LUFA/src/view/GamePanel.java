@@ -4,12 +4,16 @@
  */
 package view;
 
+import java.util.ArrayList;
+import model.Figure;
+
 /**
  *
  * @author Fabian
  */
 public class GamePanel extends javax.swing.JPanel {
 
+    ArrayList<Figure> figures;
     /**
      * Creates new form GamePanel
      */
