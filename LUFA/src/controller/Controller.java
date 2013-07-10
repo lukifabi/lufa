@@ -50,4 +50,15 @@ public class Controller {
             }
         }
     }
+    
+    public void stop(String name)
+    {
+        for(Figure f : figures)
+        {
+            if(f.getName().equals(name))
+            {
+                f.stop();
+            }
+        }
+    }
 }

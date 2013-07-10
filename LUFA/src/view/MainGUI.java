@@ -6,6 +6,7 @@ package view;
 
 import controller.Controller;
 import java.awt.Graphics2D;
+import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 import javax.swing.plaf.basic.BasicInternalFrameTitlePane;
 import model.Figure;
@@ -45,14 +46,13 @@ public class MainGUI extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton1 = new javax.swing.JButton();
-
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        jButton1.setText("Pres");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                onPress(evt);
+        addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                onKeyPressed(evt);
+            }
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                onKeyReleased(evt);
             }
         });
 
@@ -60,26 +60,31 @@ public class MainGUI extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(319, Short.MAX_VALUE)
-                .addComponent(jButton1)
-                .addGap(28, 28, 28))
+            .addGap(0, 400, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(27, 27, 27)
-                .addComponent(jButton1)
-                .addContainerGap(250, Short.MAX_VALUE))
+            .addGap(0, 300, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void onPress(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_onPress
-       Graphics2D g2d = (Graphics2D)tf.getMovementPanel1().getGraphics();
-        co.start("HansPeter", g2d);
-    }//GEN-LAST:event_onPress
+    private void onKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_onKeyPressed
+     if(evt.getKeyCode() == KeyEvent.VK_RIGHT)
+     {
+         Graphics2D g2d = (Graphics2D)tf.getMovementPanel1().getGraphics();
+         co.start("HansPeter", g2d);
+     }
+    }//GEN-LAST:event_onKeyPressed
+
+    private void onKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_onKeyReleased
+     if(evt.getKeyCode() == KeyEvent.VK_RIGHT)
+     {
+         Graphics2D g2d = (Graphics2D)tf.getMovementPanel1().getGraphics();
+         co.stop("HansPeter");
+     }
+    }//GEN-LAST:event_onKeyReleased
 
     /**
      * @param args the command line arguments
@@ -116,6 +121,5 @@ public class MainGUI extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
     // End of variables declaration//GEN-END:variables
 }
